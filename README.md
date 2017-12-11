@@ -2,4 +2,4 @@
 displaying bitcoin ticker to ESP8266 and IIC LCD display
 
 
-![demo](./public/example.gif)
+![demo](./example.gif)
