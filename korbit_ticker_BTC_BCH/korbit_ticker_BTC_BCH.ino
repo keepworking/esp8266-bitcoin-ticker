@@ -84,6 +84,7 @@ void btcDraw(int linePos) {
     lcd.setCursor(4, linePos);
     lcd.print(price == -1 ? "ERR" : String(price));
     old_price = price;
+    ESP.wdtFeed();
   }
 }
 
@@ -111,6 +112,7 @@ void bchDraw(int linePos) {
   }
 }
 void setup() {
+  ESP.wdtEnable(10000);
   WiFi.waitForConnectResult();
   Serial.begin(115200);
   lcd.begin();
@@ -122,7 +124,7 @@ void setup() {
   lcd.print("IP");
   lcd.setCursor(0, 1);
   lcd.print(WiFi.localIP());
-  delay(1000);
+  delay(4000);
   lcd.clear();
 }
 
